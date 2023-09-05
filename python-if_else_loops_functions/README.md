@@ -3,7 +3,7 @@
 
 # Author - Ethan Zalta
 
-## There are 13 tasks in this project
+## There are 13 tasks in this project with 2 Bonus Tasks
 
 
 ## **Task 0**
@@ -44,3 +44,9 @@
 
 ## **Task 12**
 *Write a function that prints the numbers from 1 to 100 separated by a space. FizzBuzz
+
+## **Bonus Task 100**
+*Write a program that prints the ASCII alphabet, in reverse order, alternating lowercase and uppercase (z in lowercase and Y in uppercase) , not followed by a new line.
+
+## **Bonus Task 101**
+*Write a function that creates a copy of the string, removing the character at the position n (not the Python way, the “C array index”).

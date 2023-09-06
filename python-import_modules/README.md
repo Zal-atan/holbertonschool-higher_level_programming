@@ -3,7 +3,7 @@
 
 # Author - Ethan Zalta
 
-## There are 5 tasks in this project with 4 Bonus Tasks
+## There are 6 tasks in this project with 4 Bonus Tasks
 
 
 ## **Task 0**
@@ -33,7 +33,13 @@
 
 
 ## **Bonus Task 100**
-*Write a program that prints the ASCII alphabet, in reverse order, alternating lowercase and uppercase (z in lowercase and Y in uppercase) , not followed by a new line.
+*Write a program that imports all functions from the file calculator_1.py and handles basic operations.
 
 ## **Bonus Task 101**
-*Write a function that creates a copy of the string, removing the character at the position n (not the Python way, the “C array index”).
+*Write a program that prints #pythoniscool, followed by a new line, in the standard output.
+
+## **Bonus Task 101**
+*Write the Python function def magic_calculation(a, b): that does exactly the same as the following Python bytecode:
+
+## **Bonus Task 101**
+*Write a program that prints the alphabet in uppercase, followed by a new line.

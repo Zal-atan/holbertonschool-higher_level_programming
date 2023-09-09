@@ -9,8 +9,16 @@ def roman_to_int(roman_string):
     i = 0
     while(i < len_str):
         if i < (len_str - 1) and rom_dict[roman_string[i]] < rom_dict[roman_string[i + 1]]:
-            sum += (rom_dict[roman_string[i + 1]] - rom_dict[roman_string[i]])
-            i += 2
+            if (roman_string[i] == "I") and (roman_string[i + 1] == "V" or roman_string[i + 1] == "X"):
+                sum += (rom_dict[roman_string[i + 1]] - rom_dict[roman_string[i]])
+                i += 2
+            elif (roman_string[i] == "X") and (roman_string[i + 1] == "L" or roman_string[i + 1] == "C"):
+                sum += (rom_dict[roman_string[i + 1]] - rom_dict[roman_string[i]])
+                i += 2
+            elif (roman_string[i] == "C") and (roman_string[i + 1] == "" or roman_string[i + 1] == "M"):
+                sum += (rom_dict[roman_string[i + 1]] - rom_dict[roman_string[i]])
+                i += 2
+            else: return 0
         else:
             sum += rom_dict[roman_string[i]]
             i += 1

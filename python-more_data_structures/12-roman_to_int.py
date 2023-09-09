@@ -9,6 +9,8 @@ def roman_to_int(roman_string):
     sum = 0
     i = 0
     while(i < len_str):
+        if roman_string[i] not in rom_dict:
+            return 0
         if i < (len_str - 1) and (rom_dict[roman_string[i]] <
                                   rom_dict[roman_string[i + 1]]):
             if (roman_string[i] == "I") and (roman_string[i + 1] == "V" or

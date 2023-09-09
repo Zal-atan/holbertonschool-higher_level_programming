@@ -2,8 +2,6 @@
 
 def square_matrix_simple(matrix=[]):
     new_matrix = []
-    if matrix is None:
-        return None
     for list in matrix:
         listLen = len(list)
         if listLen == 0:

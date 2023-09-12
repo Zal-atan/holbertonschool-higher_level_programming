@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 def weight_average(my_list=[]):
-    if my_list is None or type(my_list) != list:
+    if my_list is None or type(my_list) != list or len(my_list) == 0:
         return 0
     denominator = 0
     numerator = 0

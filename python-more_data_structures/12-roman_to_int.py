@@ -5,7 +5,7 @@ def roman_to_int(roman_string):
                 "L": 50, "X": 10, "V": 5, "I": 1}
     len_str = len(roman_string)
     if roman_string is None or len_str < 1 or type(roman_string) != str:
-        return 0
+        return int(0)
     sum = 0
     i = 0
     while(i < len_str):

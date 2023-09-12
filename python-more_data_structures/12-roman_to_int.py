@@ -31,4 +31,4 @@ def roman_to_int(roman_string):
         else:
             sum += rom_dict[roman_string[i]]
             i += 1
-    return sum
+    return int(sum)

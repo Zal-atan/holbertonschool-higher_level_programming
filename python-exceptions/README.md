@@ -3,7 +3,7 @@
 
 # Author - Ethan Zalta
 
-## There are 7 tasks in this project
+## There are 7 tasks in this project and 3 bonus tasks
 
 
 ## **Task 0**
@@ -26,3 +26,12 @@
 
 ## **Task 6**
 * Write a function that raises a name exception with a message.
+
+## **Bonus Task 100**
+* Write a function that prints an integer.
+
+## **Bonus Task 101**
+* Write a function that executes a function safely.
+
+## **Bonus Task 102**
+* Write the Python function def magic_calculation(a, b): that does exactly the same as the following Python bytecode:

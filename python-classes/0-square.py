@@ -3,7 +3,7 @@
 # Ethan Zalta
 """This is a file creating a class for Square"""
 
-class Square():
+class Square:
     """Class Defining a Square"""
 
     pass

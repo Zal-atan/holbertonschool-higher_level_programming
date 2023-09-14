@@ -30,6 +30,7 @@ class Square:
         return (self.__size ** 2)
 
     def my_print(self):
+        """Prints shape of a square with #'s"""
         if self.__size == 0:
             print("")
         for i in range (0, self.__size):

@@ -4,4 +4,5 @@ class Square():
     """Class Defining a Square"""
 
     def __init__(self) -> None:
-        pass
+        """Initializing the square"""
+        self.size = None

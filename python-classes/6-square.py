@@ -17,11 +17,6 @@ class Square:
         """Finds the size of self -- Getter"""
         return self.__size
 
-    @property
-    def position(self):
-        "Finds the current position -- Getter"
-        return self.__position
-
     @size.setter
     def size(self, value):
         """Sets the value for size -- Setter"""
@@ -31,6 +26,10 @@ class Square:
             raise ValueError("size must be >= 0")
         self.__size = value
 
+    @property
+    def position(self):
+        "Finds the current position -- Getter"
+        return self.__position
 
     @position.setter
     def position(self, value):

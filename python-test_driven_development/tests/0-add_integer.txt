@@ -13,11 +13,11 @@ Testing Correct Use Case
 ========================
 
 Testing when a and b are both integers
->>> add_integers(34, 14)
+>>> add_integer(34, 14)
 48
 
 Testing a and b with negative integers
->>> add_integers(-40, -12)
+>>> add_integer(-40, -12)
 -52
 
 Testing a is an integer and b has not been passed

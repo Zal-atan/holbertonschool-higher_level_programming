@@ -49,9 +49,10 @@ class Square:
     def my_print(self):
         """Prints shape of a square with #'s
             Position is shown by blank spaces"""
-        for y in range(0, self.position[1]):
-            print("")
         if self.__size == 0:
+            print("")
+            return
+        for y in range(0, self.position[1]):
             print("")
         for i in range(0, self.__size):
             for x in range(0, self.position[0]):

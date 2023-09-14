@@ -1,4 +1,4 @@
-# This is a Readme for the Python-More_Data_Structures Project
+# This is a Readme for the Python-Classes Project
 ## In this project we will be learning about classes, objects, and methods in Python
 
 # Author - Ethan Zalta

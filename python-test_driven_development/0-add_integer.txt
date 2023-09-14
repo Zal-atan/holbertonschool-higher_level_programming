@@ -1,0 +1,40 @@
+The ``Add_Integer`` module
+======================
+
+Using ``Add_Integer``
+-------------------
+
+Import add_integer function to doctest
+>>> add_integer = __import__('0-add_integer').add_integer
+
+``add_integer`` should return the sum of two arguments
+
+Testing Correct Use Case
+========================
+
+Testing when a and b are both integers
+>>> add_integers(34, 14)
+48
+
+Testing a and b with negative integers
+>>> add_integers(-40, -12)
+-52
+
+Testing a is an integer and b has not been passed
+>>> add_integer(22)
+120
+
+Testing if a float is passed for a, int in b
+>>> add_integer(2.4, 24)
+26
+
+Testing if a float is passed for b, int in a
+>>> add_integer(4, 27.8)
+31
+
+
+``add_integer`` should not work if the data type is not int or float,
+a TypeError should be raised when an invalid input is given
+
+Testing Non-Int/Float Inputs
+============================

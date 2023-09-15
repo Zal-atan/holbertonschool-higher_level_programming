@@ -1,0 +1,70 @@
+The ``Say_My_Name`` module
+======================
+
+Using ``say_my_name``
+-------------------
+
+Import say_my_name function to doctest
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+``say_my_name`` should print 'My name is {first_name} {last_name}' but
+returns errors if either name is not a string
+
+Testing Correct Use Case
+========================
+
+Testing a with two both case names:
+>>> say_my_name("Ethan", "Zalta")
+My name is Ethan Zalta
+
+Testing only first name given
+>>> say_my_name("Bob")
+My name is Bob 
+
+Testing two lower case names
+>>> say_my_name("walter", "white")
+My name is walter white
+
+Testing two upper case names
+>>> say_my_name("BUGS", "BUNNY")
+My name is BUGS BUNNY
+
+
+``say_my_name`` should not work if either given input is not a string. In this
+scenario, a TypeError should be raised.
+
+
+Testing Incorrect Inputs
+============================
+
+Testing an int input for first_name
+>>> say_my_name(3, "Name")
+Traceback (most recent call last):
+TypeError: first_name must be a string
+
+Testing an float input for last_name
+>>> say_my_name("John", 3.56)
+Traceback (most recent call last):
+TypeError: last_name must be a string
+
+Testing an Bool input for first_name
+>>> say_my_name(True, "Name")
+Traceback (most recent call last):
+TypeError: first_name must be a string
+
+
+Testing an input of None on first_name input
+>>> say_my_name(None, "Williams")
+Traceback (most recent call last):
+TypeError: first_name must be a string
+
+
+Testing no input
+>>> say_my_name()
+Traceback (most recent call last):
+TypeError: say_my_name() missing 1 required positional argument: first_name 
+
+Testing more than two Inputs
+>>> say_my_name("Bob", "John", "Philips")
+Traceback (most recent call last):
+TypeError: say_my_name() takes 2 positional arguments but 3 were given

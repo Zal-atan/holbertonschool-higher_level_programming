@@ -88,4 +88,4 @@ TypeError: text_indentation() missing 1 required positional argument: 'text'
 Testing more than two Inputs
 >>> text_indentation("Bob", "John")
 Traceback (most recent call last):
-TypeError: text_indentation() takes 1 positional arguments but 2 were given
+TypeError: text_indentation() takes 1 positional argument but 2 were given

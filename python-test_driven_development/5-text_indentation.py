@@ -9,6 +9,8 @@ def text_indentation(text):
     ? and : by two new lines each time. This function only accepts strings"""
     counter = 0
     textlen = 0
+    if type(text) is not str:
+        raise TypeError("text must be a string")
     for character in text:
         if character == ":" or character == "." or character == "?":
             print(character)

@@ -5,6 +5,8 @@
 
 
 def add_integer(a, b=98):
+    """Add integer should convert floats to int, and add two integers together.
+    Any other type of input should raise a TypeError"""
     if type(a) is float:
         a = int(a)
     if type(b) is float:

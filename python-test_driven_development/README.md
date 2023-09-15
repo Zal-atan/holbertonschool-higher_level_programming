@@ -14,7 +14,7 @@
     * Returns an integer: the addition of a and b
     * You are not allowed to import any module
 
-## **Task 1**
+## **Task 2**
 * Write a function that divides all elements of a matrix.
 
     * Prototype: def matrix_divided(matrix, div):
@@ -26,14 +26,14 @@
     * Returns a new matrix
     * You are not allowed to import any module
 
-## **Task 2**
+## **Task 3**
 * Write a function that prints My name is <first name> <last name>
 
     * Prototype: def say_my_name(first_name, last_name=""):
     * first_name and last_name must be strings otherwise, raise a TypeError exception with the message first_name must be a string or last_name must be a string
     * You are not allowed to import any module
 
-## **Task 3**
+## **Task 4**
 * Write a function that prints a square with the character #.
 
     * Prototype: def print_square(size):
@@ -43,7 +43,7 @@
     * if size is a float and is less than 0, raise a TypeError exception with the message size must be an integer
     * You are not allowed to import any module
 
-## **Task 4**
+## **Task 5**
 * Write a function that prints a text with 2 new lines after each of these characters: ., ? and :
 
     * Prototype: def text_indentation(text):
@@ -51,7 +51,7 @@
     * There should be no space at the beginning or at the end of each printed line
     * You are not allowed to import any module.
 
-## **Task 5**
+## **Task 6**
 * In this task, you will write unittests for the function def max_integer(list=[]):.
 
     * Your test file should be inside a folder tests

@@ -1,0 +1,91 @@
+The ``Text_Indentation`` module
+======================
+
+Using ``text_indentation``
+-------------------
+
+Import text_indentation function to doctest
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+``text_indentation`` will print a given input of text, separating the text with
+two newlines each time a . or ? or : occurs
+
+Testing Correct Use Case
+========================
+
+Testing a with ".":
+>>> text_indentation("Hello. Let's go to the mall")
+Hello.
+
+Let's go to the mall
+
+Testing with "?"
+>>> text_indentation("What's up? Not much and you")
+What's up?
+
+Not much and you
+
+Testing with ":"
+>>> text_indentation("Coding: How to learn logic")
+Coding:
+
+How to learn logic
+
+Testing with multiple separators
+>>> text_indentation("List for Today: What is life? Let's. go")
+List for Today:
+
+What is life?
+
+Let's.
+
+go
+
+Testing space at beggining of string
+>>> text_indentation(" Let's Go")
+Let's Go
+
+Testing space at the end of string
+>>> text_indentation("Happy Birthday ")
+Happy Birthday
+
+
+
+``text_indentation`` should not work if given input is not a string. In this
+scenario, a TypeError should be raised.
+
+
+Testing Incorrect Inputs
+============================
+
+Testing an int input
+>>> text_indentation(3)
+Traceback (most recent call last):
+TypeError: text must be a string
+
+Testing an float input
+>>> text_indentation(3.56)
+Traceback (most recent call last):
+TypeError: text must be a string
+
+Testing an Bool input
+>>> text_indentation(True)
+Traceback (most recent call last):
+TypeError: text must be a string
+
+
+Testing an input of None
+>>> text_indentation(None)
+Traceback (most recent call last):
+TypeError: text must be a string
+
+
+Testing no input
+>>> text_indentation()
+Traceback (most recent call last):
+TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+Testing more than two Inputs
+>>> text_indentation("Bob", "John")
+Traceback (most recent call last):
+TypeError: text_indentation() takes 1 positional arguments but 2 were given

@@ -38,3 +38,29 @@ a TypeError should be raised when an invalid input is given
 
 Testing Non-Int/Float Inputs
 ============================
+
+Testing an input as a string in a
+>>> add_integer("String", 75)
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+Testing an input of a Boolean in b
+>>> add_integer(5, True)
+Traceback (most recent call last):
+TypeError: b must be an integer
+
+Testing an input of None on a
+>>> add_integer(None, 25)
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+Testing an input of a list on b
+>>> add_integer(75, [32, 64])
+Traceback (most recent call last):
+TypeError: b must be an integer
+
+Testing no input
+
+Testing more than two Inputs
+
+

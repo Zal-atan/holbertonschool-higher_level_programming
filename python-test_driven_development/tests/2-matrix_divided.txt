@@ -15,23 +15,23 @@ Testing Correct Use Case
 
 Testing a matrix of 2x2 with even divides
 >>> matrix_divided([[4, 2], [8, 4]], 2)
-[[2.00, 1.00], [4.00, 2.00]]
+[[2.0, 1.0], [4.0, 2.0]]
 
 Testing a matrix of 3x2 
 >>> matrix_divided([[4, 2, 5], [8, 4, 3]], 2)
-[[2.00, 1.00, 2.50], [4.00, 2.00, 1.50]]
+[[2.0, 1.0, 2.5], [4.0, 2.0, 1.5]]
 
 Testing a matrix of 3x2 with negative numbers
 >>> matrix_divided([[-6, -9, -4], [-7, -4, -3]], 3)
-[[-2.00, -3.00, -1.33], [-2.33, -1.33, -1]]
+[[-2.0, -3.0, -1.33], [-2.33, -1.33, -1.0]]
 
 Testing if a 2x2 matrix with floats
 >>> matrix_divided([[4.2, 2.5], [8.6, 4.3]], 2)
-[[2.10, 1.25], [4.30, 2.15]]
+[[2.1, 1.25], [4.3, 2.15]]
 
 Testing if a 2x2 matrix with combination of + and - floats
 >>> matrix_divided([[-4.2, 2.5], [-8.6, 4.3]], 2)
-[[-2.10, 1.25], [-4.30, 2.15]]
+[[-2.1, 1.25], [-4.3, 2.15]]
 
 
 
@@ -51,31 +51,31 @@ Traceback (most recent call last):
 TypeError: matrix must be a matrix (list of lists) of integers/floats
 
 Testing an input of a Boolean in div input
->>>matrix_divided([[5, 1], [5, 2]], True)
+>>> matrix_divided([[5, 1], [5, 2]], True)
 Traceback (most recent call last):
 TypeError: div must be a number
 
 Testing an input of None on matrix input
->>>matrix_divided(None, 25)
+>>> matrix_divided(None, 25)
 Traceback (most recent call last):
 TypeError: matrix must be a matrix (list of lists) of integers/floats
 
 Testing an input of a list of tuples on a
->>>matrix_divided([(3, 4), (4, 5)], 3)
+>>> matrix_divided([(3, 4), (4, 5)], 3)
 Traceback (most recent call last):
 TypeError: matrix must be a matrix (list of lists) of integers/floats
 
 Testing an input of a 0 in div input
->>>matrix_divided([[5, 1], [5, 2]], 0)
+>>> matrix_divided([[5, 1], [5, 2]], 0)
 Traceback (most recent call last):
 ZeroDivisionError: division by zero
 
 Testing no input
->>>matrix_divided()
+>>> matrix_divided()
 Traceback (most recent call last):
 TypeError>matrix_divided() missing 2 required positional argument: 'matrix', 'div'
 
 Testing more than two Inputs
->>>matrix_divided(3, 6, 9)
+>>> matrix_divided(3, 6, 9)
 Traceback (most recent call last):
 TypeError>matrix_divided() takes 2 positional arguments but 3 were given

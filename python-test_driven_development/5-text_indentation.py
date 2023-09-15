@@ -18,7 +18,7 @@ def text_indentation(text):
             counter = 0
             textlen += 1
         elif counter == 0 and character == " ":
-            counter += 1
+            counter = 0
             continue
         elif textlen == (len(text) - 1) and character == " ":
             continue

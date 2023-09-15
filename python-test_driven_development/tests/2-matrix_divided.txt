@@ -33,6 +33,10 @@ Testing if a 2x2 matrix with combination of + and - floats
 >>> matrix_divided([[-4.2, 2.5], [-8.6, 4.3]], 2)
 [[-2.1, 1.25], [-4.3, 2.15]]
 
+Testing with float(inf) as div
+>>> matrix_divided([[-4.2, 2.5], [-8.6, 4.3]], float('inf'))
+[[-0.0, 0.0], [-0.0, 0.0]]
+
 
 
 ``matrix_divided`` should not work if the data type is not int or float,

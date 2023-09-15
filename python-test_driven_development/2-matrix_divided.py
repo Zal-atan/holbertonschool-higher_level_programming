@@ -15,7 +15,14 @@ def matrix_divided(matrix, div):
         raise TypeError("div must be a number")
     if div == 0:
         raise ZeroDivisionError("division by zero")
+    i = 0
+    listLen = 0
     for row in matrix:
         if type(row) is not list:
             raise TypeError(typeerror1)
+        if i != 0 and listLen != len(row):
+            raise TypeError("Each row of the matrix must have the same size")
+        i += 1
+        listLen = len(row)
+        
     return [[round(x / div, 2) for x in row] for row in matrix]

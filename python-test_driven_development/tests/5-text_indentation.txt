@@ -16,29 +16,29 @@ Testing Correct Use Case
 Testing a with ".":
 >>> text_indentation("Hello. Let's go to the mall")
 Hello.
-
+<BLANKLINE>
 Let's go to the mall
 
 Testing with "?"
 >>> text_indentation("What's up? Not much and you")
 What's up?
-
+<BLANKLINE>
 Not much and you
 
 Testing with ":"
 >>> text_indentation("Coding: How to learn logic")
 Coding:
-
+<BLANKLINE>
 How to learn logic
 
 Testing with multiple separators
 >>> text_indentation("List for Today: What is life? Let's. go")
 List for Today:
-
+<BLANKLINE>
 What is life?
-
+<BLANKLINE>
 Let's.
-
+<BLANKLINE>
 go
 
 Testing space at beggining of string

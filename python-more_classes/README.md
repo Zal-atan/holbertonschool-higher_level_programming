@@ -60,6 +60,7 @@
         * Initialized to #
         * Used as symbol for string representation
         * Can be any type
+    * print() and str() should print the rectangle with the character(s) stored in print_symbol
 
 ## **Task 8**
 * Write a class Rectangle that defines a rectangle by: (based on 7-rectangle.py)

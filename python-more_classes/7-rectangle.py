@@ -60,6 +60,8 @@ class Rectangle():
             return print_display
         for y in range(0, self.height):
             for x in range(0, self.width):
+                if type(self.width) is not str:
+                    self.print_symbol = str(self.print_symbol)
                 print_display += self.print_symbol
             if y < (self.height - 1):
                 print_display += "\n"

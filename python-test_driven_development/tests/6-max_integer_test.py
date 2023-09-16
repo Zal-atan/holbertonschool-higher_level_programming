@@ -24,3 +24,15 @@ class TestMaxInteger(unittest.TestCase):
         self.assertEqual(max_integer([25, 9.6, 18.1]), 25)
         #Testing string
         self.assertEqual(max_integer("hello world"), "w")
+
+    def test_incorrect_use(self):
+        #Testing with tuple
+        self.assertRaises(TypeError, max_integer((3, 4, 5)))
+        #Testing with string inside of list
+        self.assertRaises(TypeError, max_integer, [3, "hello", 4])
+        #Testing with multiple arguments
+        self.assertRaises(TypeError, max_integer, [1, 2, 4], [2, 4, 6])
+        #Testing with no arguments
+        self.assertEqual(max_integer([]), None)
+        #Testing with an integer passed
+        self.assertRaises(TypeError, max_integer, 12)

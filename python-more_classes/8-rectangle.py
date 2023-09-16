@@ -86,5 +86,3 @@ class Rectangle():
             return rect_1
         if rect_2.area() > rect_1.area():
             return rect_2
-
-

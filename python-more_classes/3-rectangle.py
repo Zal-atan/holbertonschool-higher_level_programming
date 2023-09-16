@@ -48,21 +48,13 @@ class Rectangle:
             return 0
         return (2 * self.width + 2 * self.height)
 
-    def __print__(self):
-        if self.height == 0 or self.width == 0:
-            print()
-            return
-        for y in range(0, self.height):
-            for x in range(0, self.width):
-                print("#", end="")
-            print()
-
     def __str__(self):
+        print_display = ""
         if self.height == 0 or self.width == 0:
-            print()
-            return
+            return print_display
         for y in range(0, self.height):
             for x in range(0, self.width):
-                print("#", end="")
-            print()
-        return
+                print_display += "#"
+            if y < (self.height - 1):
+                print_display += "\n"
+        return print_display

@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# 0-add_integer.py
+# 3-say_my_name.py
 # Ethan Zalta
 """This is a function printing a given first and last name"""
 

@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# 0-add_integer.py
+# 2-matrix_divided.py
 # Ethan Zalta
 """This is a function dividing a whole matrix"""
 

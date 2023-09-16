@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# 0-add_integer.py
+# 4-print_square.py
 # Ethan Zalta
 """TThis is a function for printing a square"""
 

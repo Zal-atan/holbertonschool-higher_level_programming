@@ -9,7 +9,7 @@ class Rectangle():
     number_of_instances = 0
     print_symbol = "#"
 
-    def __init__(self, width=0, height=0, print_symbol="#"):
+    def __init__(self, width=0, height=0):
         """Initializes Rectangle with a width and a size"""
         self.height = height
         self.width = width

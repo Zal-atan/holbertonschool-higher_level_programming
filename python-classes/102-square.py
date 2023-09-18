@@ -78,19 +78,25 @@ class Square:
         return return_str
 
     def __lt__(self, other_square):
+        """Returns True if self.area is less than other_square.area"""
         return self.area() < other_square.area()
 
     def __le__(self, other_square):
+        """Returns True if self.area is less than or = other_square.area"""
         return self.area() <= other_square.area()
 
     def __eq__(self, other_square):
+        """Returns True if self.area is equal to other_square.area"""
         return self.area() == other_square.area()
 
     def __ne__(self, other_square):
+        """Returns True if self.area is not equal to other_square.area"""
         return self.area() != other_square.area()
 
     def __gt__(self, other_square):
+        """Returns True if self.area is greater than other_square.area"""
         return self.area() > other_square.area()
 
     def __ge__(self, other_square):
+        """Returns True if self.area is greater than or = other_square.area"""
         return self.area() >= other_square.area()

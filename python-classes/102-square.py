@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# 101-square.py
+# 0-square.py
 # Ethan Zalta
 """This is a file creating a class for Square."""
 
@@ -76,3 +76,21 @@ class Square:
             if i < (self.__size - 1):
                 return_str += "\n"
         return return_str
+
+    def __lt__(self, other_square):
+        return self.area() < other_square.area()
+
+    def __le__(self, other_square):
+        return self.area() <= other_square.area()
+
+    def __eq__(self, other_square):
+        return self.area() == other_square.area()
+
+    def __ne__(self, other_square):
+        return self.area() != other_square.area()
+
+    def __gt__(self, other_square):
+        return self.area() > other_square.area()
+
+    def __ge__(self, other_square):
+        return self.area() >= other_square.area()

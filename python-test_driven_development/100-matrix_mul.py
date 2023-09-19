@@ -34,6 +34,7 @@ def matrix_mul(m_a, m_b):
     for innerList in m_a:
         if len(innerList) != row:
             raise TypeError("each row of m_a must be of the same size")
+    row = len(m_b[0])
     for innerList in m_b:
         if len(innerList) != row:
             raise TypeError("each row of m_b must be of the same size")
@@ -47,13 +48,10 @@ def matrix_mul(m_a, m_b):
             for j in range(0, len(m_b[i])):
                 # print(f"Length {len(m_b[i])}")
                 try:
-                    # print(f"Adding num: {num} * {m_b[i][j]} to current: list[{j}] = {current_matrix_list[i]}")
                     current_matrix_list[j] += num * m_b[i][j]
                 except Exception as e:
                     print(e)
-                    print(f"flag = {flag}, i = {i}, {m_b[i]}, {m_b[i][flag]}, num = {num}")
             i += 1
             flag += 1
         new_matrix.append(current_matrix_list)
     return new_matrix
-

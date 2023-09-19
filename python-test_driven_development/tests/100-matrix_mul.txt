@@ -77,7 +77,7 @@ Traceback (most recent call last):
 TypeError: m_a should contain only integers or floats
 
 Testing an input of list with incorrect type on matrix_b input
->>> matrix_mul([[3, 2]], [[True]])
+>>> matrix_mul([[3, 2]], [["String"]])
 Traceback (most recent call last):
 TypeError: m_b should contain only integers or floats
 

@@ -1,0 +1,102 @@
+The ``Matrix_Mul`` module
+======================
+
+Using ``matrix_mul``
+-------------------
+
+Import matrix_mul function to doctest
+>>> matrix_mul = __import__('100-matrix_mul').matrix_mul
+
+``matrix_mul`` should return a matrix where each number is divided by the
+second input of the function.
+
+Testing Correct Use Case
+========================
+
+Testing a matrix of 2x2 X 2x2
+>>> matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]])
+[[7, 10], [15, 22]]
+
+Testing a matrix of 1x2 X 2x2 
+>>> matrix_mul([[1, 2]], [[3, 4], [5, 6]])
+[[13, 16]]
+
+Testing a matrix of 1x2 X 2x2 with negative numbers
+>>> matrix_mul([[-1, -2]], [[3, 4], [5, 6]])
+[[-13, -16]]
+
+Testing if a 1x2 X 2x2 matrix with floats
+>>> matrix_mul([[1, 2]], [[3.5, 4.5], [5.5, 6.5]])
+[[14.5, 17.5]]
+
+
+
+``matrix_mul`` should not work if the data type is not int or float,
+a TypeError should be raised when an invalid input is given
+* Matrix must be list of lists - TypeError
+* Each row of the matrix should have the same size - TypeError
+* Cannot divide by 0 - ZeroDivisionError
+
+
+Testing Incorrect Inputs
+============================
+
+Testing an input as a string in matrix_a input
+>>> matrix_mul("String", 3)
+Traceback (most recent call last):
+TypeError: m_a must be a list
+
+Testing an input of a Boolean in matrix_b input
+>>> matrix_mul([[5, 1], [5, 2]], True)
+Traceback (most recent call last):
+TypeError: m_b must be a list
+
+Testing an list of lists matrix_a
+>>> matrix_mul([(3)], [[1, 2]])
+Traceback (most recent call last):
+TypeError: m_a must be a list of lists
+
+Testing an list of lists matrix_b
+>>> matrix_mul([[3, 2]], [(3, 2)])
+Traceback (most recent call last):
+TypeError: m_b must be a list of lists
+
+Testing if m_a is empty
+>>> matrix_mul([[]], [[5, 2]])
+Traceback (most recent call last):
+TypeError: m_a can't be empty
+
+Testing if m_b is empty
+>>> matrix_mul([[3, 5]], [[]])
+Traceback (most recent call last):
+TypeError: m_b can't be empty
+
+Testing an input of list with incorrect type on matrix_a input
+>>> matrix_mul([["String"]], [[3, 2]])
+Traceback (most recent call last):
+TypeError: m_a should contain only integers or floats
+
+Testing an input of list with incorrect type on matrix_b input
+>>> matrix_mul([[3, 2]], [[True]])
+Traceback (most recent call last):
+TypeError: m_b should contain only integers or floats
+
+Testing an rows of different size matrix_a
+>>> matrix_mul([[3, 2], [3, 3, 3]], [[3, 2], [3, 2]])
+Traceback (most recent call last):
+TypeError: each row of m_a must be of the same size
+
+Testing an rows of different size matrix_b
+>>> matrix_mul([[3, 2], [3, 3]], [[3, 2], [3, 3, 2]])
+Traceback (most recent call last):
+TypeError: each row of m_b must be of the same size
+
+Testing no input
+>>> matrix_mul()
+Traceback (most recent call last):
+TypeError: matrix_mul() missing 2 required positional arguments: 'm_a' and 'm_b'
+
+Testing more than two Inputs
+>>> matrix_mul(3, 6, 9)
+Traceback (most recent call last):
+TypeError: matrix_mul() takes 2 positional arguments but 3 were given

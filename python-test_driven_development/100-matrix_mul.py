@@ -32,11 +32,11 @@ def matrix_mul(m_a, m_b):
                 raise TypeError("m_b should contain only integers or floats")
     row1 = len(m_a[0])
     for innerList in m_a:
-        if len(innerList) != row:
+        if len(innerList) != row1:
             raise TypeError("each row of m_a must be of the same size")
     row2 = len(m_b[0])
     for innerList in m_b:
-        if len(innerList) != row:
+        if len(innerList) != row2:
             raise TypeError("each row of m_b must be of the same size")
     if row1 > row2:
         raise ValueError("m_a and m_b can't be multiplied")

@@ -1,0 +1,61 @@
+The ``MY_List`` module
+======================
+
+Using ``My_List``
+-------------------
+
+Import my_list function to doctest
+>>> MyList = __import__('1-my_list').MyList
+
+``My_List`` should import the MyList Class, with all attributes and methods
+
+Testing Correct Use Case
+========================
+
+Testing Creating a new instance of MyList
+>>> my_list = MyList()
+
+Testing adding number into list
+>>> my_list.append(1)
+
+Testing adding number into list
+>>> my_list.append(5)
+
+Testing adding number into list
+>>> my_list.append(3)
+
+Testing adding number into list
+>>> my_list.append(4)
+
+Testing adding number into list
+>>> my_list.append(2)
+
+Testing printing my_list
+>>> print(my_list)
+[1, 5, 3, 4, 2]
+
+Testing sorted print my_list
+>>> my_list.print_sorted()
+[1, 2, 3, 4, 5]
+
+Testing printing my_list again after print sorted
+>>> print(my_list)
+[1, 5, 3, 4, 2]
+
+
+``my_list`` should not work if the data type is not int or float,
+a TypeError should be raised when an invalid input is given
+
+Testing Non-Int/Float Inputs
+============================
+
+
+Testing no input
+>>> my_list()
+Traceback (most recent call last):
+TypeError: 'MyList' object is not callable
+
+Testing more than two Inputs
+>>> my_list([3, 6, 9])
+Traceback (most recent call last):
+TypeError: 'MyList' object is not callable

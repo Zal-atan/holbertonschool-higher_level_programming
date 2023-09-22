@@ -6,9 +6,6 @@
 
 class MyList(list):
     """ Class MyList inherits from list"""
-    def __init__(self):
-        """Initializes new instance of MyList"""
-        pass
 
     def print_sorted(self):
         """Sorts then prints list"""

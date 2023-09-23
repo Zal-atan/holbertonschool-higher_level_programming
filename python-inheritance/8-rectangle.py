@@ -21,9 +21,12 @@ class BaseGeometry:
         return True
 
 class Rectangle(BaseGeometry):
+    """Class Rectangle which inherits from class BaseGeometry"""
 
     def __init__(self, width, height):
+        """Initializes Rectangle class with width and height
+        Both width and height must be checked by integer_validator method"""
         if self.integer_validator("width", width):
-            self.width = width
+            self.__width = width
         if self.integer_validator("height", height):
-            self.height = height
+            self.__height = height

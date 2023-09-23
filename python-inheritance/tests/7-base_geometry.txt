@@ -1,0 +1,83 @@
+The ``Base_Geometry`` module
+======================
+
+Using ``Base_Geometry``
+-------------------
+
+Import Base_Geometry Class to doctest
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+``BaseGeometry`` should import the BaseGeometry Class, with all attributes and methods
+
+Testing Correct Use Case
+========================
+
+Testing Creating a new instance of BaseGeometry
+>>> bg = BaseGeometry()
+
+Testing Area function
+>>> print(bg.area())
+Traceback (most recent call last):
+Exception: area() is not implemented
+
+Testing Correct use of integer_validator
+>>> bg.integer_validator("my_int", 12)
+True
+
+``integer_validator`` should not work if the value type is not int or float,
+a TypeError should be raised when an invalid input is given
+
+Testing Non-Int/Float Inputs
+============================
+
+
+Testing no input
+>>> bg1 = BaseGeometry(None)
+Traceback (most recent call last):
+TypeError: BaseGeometry() takes no arguments
+
+Testing more than two Inputs
+>>> bg = BaseGeometry([1, 2], [3, 4])
+Traceback (most recent call last):
+TypeError: BaseGeometry() takes no arguments
+
+Testing Area function with input
+>>> print(bg.area())
+Traceback (most recent call last):
+Exception: area() is not implemented
+
+Testing integer_validator with incorrect type as value
+Testing Correct use of integer_validator
+>>> bg.integer_validator("my_int", "Bob")
+Traceback (most recent call last):
+TypeError: my_int must be an integer
+
+Testing integer_validator with 0 as value
+Testing Correct use of integer_validator
+>>> bg.integer_validator("my_int", 0)
+Traceback (most recent call last):
+ValueError: my_int must be greater than 0
+
+Testing integer_validator with negative as value
+Testing Correct use of integer_validator
+>>> bg.integer_validator("my_int", -5)
+Traceback (most recent call last):
+ValueError: my_int must be greater than 0
+
+Testing integer_validator with 0 inputs
+Testing Correct use of integer_validator
+>>> bg.integer_validator()
+Traceback (most recent call last):
+TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+Testing integer_validator with 1 input
+Testing Correct use of integer_validator
+>>> bg.integer_validator("my_int")
+Traceback (most recent call last):
+TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+Testing integer_validator with 3 input
+Testing Correct use of integer_validator
+>>> bg.integer_validator("my_int", 5, "Bob")
+Traceback (most recent call last):
+TypeError: integer_validator() takes 3 positional arguments but 4 were given

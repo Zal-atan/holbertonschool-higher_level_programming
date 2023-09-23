@@ -1,7 +1,7 @@
 #!/usr/bin/python3
-# 7-base_geometry.py
+# 8-rectangle.py
 # Ethan Zalta
-"""This is a file creating a class BaseGeometry"""
+"""This is a file creating a class BaseGeometry, then a subclass Rectangle"""
 
 
 class BaseGeometry:
@@ -19,3 +19,11 @@ class BaseGeometry:
         if value <= 0:
             raise ValueError(f"{name} must be greater than 0")
         return True
+
+class Rectangle(BaseGeometry):
+
+    def __init__(self, width, height):
+        if self.integer_validator("width", width):
+            self.__width = width
+        if self.integer_validator("height", height):
+            self.__height = height

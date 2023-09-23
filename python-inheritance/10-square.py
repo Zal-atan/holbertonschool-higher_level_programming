@@ -1,7 +1,8 @@
 #!/usr/bin/python3
-# 9-rectangle.py
+# 10-square.py
 # Ethan Zalta
-"""This is a file creating a class BaseGeometry, then a subclass Rectangle"""
+"""This is a file creating a class BaseGeometry, then a subclass Rectangle,
+finally a sublass of rectangle: Square"""
 
 
 class BaseGeometry:
@@ -37,3 +38,13 @@ class Rectangle(BaseGeometry):
 
     def __str__(self):
         return f"[Rectangle] {self.__width}/{self.__height}"
+
+
+class Square(Rectangle):
+    """Class Square which is a subclass of Rectangle"""
+
+    def __init__(self, size):
+        """Initializes Square with sides of length size"""
+        if self.integer_validator("size", size):
+            super().__init__(size, size)
+            self.__size = size

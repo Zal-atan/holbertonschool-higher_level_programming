@@ -13,4 +13,3 @@ def save_to_json_file(my_obj, filename):
     with open(filename, encoding="utf-8", mode="w") as file:
         chars = file.write(serialized)
         file.close
-    return chars

@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# 0-read_file.py
+# 1-write_file.py
 # Ethan Zalta
 """This is a file creating a function which writes to a file"""
 

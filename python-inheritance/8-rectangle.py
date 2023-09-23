@@ -27,7 +27,7 @@ class Rectangle(BaseGeometry):
     def __init__(self, width, height):
         """Initializes Rectangle class with width and height
         Both width and height must be checked by integer_validator method"""
-        self.integer_validator("width", width)
-        self.__width = width
-        self.integer_validator("height", height)
-        self.__height = height
+        if self.integer_validator("width", width):
+            self.__width = width
+        if self.integer_validator("height", height):
+            self.__height = height

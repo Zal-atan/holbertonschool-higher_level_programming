@@ -3,10 +3,9 @@
 # Ethan Zalta
 """This is a file creating a function which turns an instance of a class into
 a json version"""
-import json
 
 
 def class_to_json(obj):
     """Takes input obj(instance of a class) and returns a json format
     string of the information"""
-    return json.dumps(obj.__dict__)
+    return obj.__dict__

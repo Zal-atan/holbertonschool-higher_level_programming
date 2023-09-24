@@ -5,6 +5,7 @@
 
 
 def magic_string():
+    """This function prints a longer string each time it is called"""
     try:
         magic_string.counter += 1
     except Exception as e:

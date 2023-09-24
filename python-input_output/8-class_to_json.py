@@ -9,4 +9,4 @@ import json
 def class_to_json(obj):
     """Takes input obj(instance of a class) and returns a json format
     string of the information"""
-    return  obj.__dict__
+    return obj.__dict__

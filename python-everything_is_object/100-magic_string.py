@@ -1,17 +1,4 @@
 #!/usr/bin/python3
-# 100-magic_string.py
-# Ethan Zalta
-"""This function prints "BestSchool more times each time it is called"""
-
-
-def magic_string():
-    """This function prints a longer string each time it is called"""
-    try:
-        magic_string.counter += 1
-    except Exception as e:
-        magic_string.counter = 1
-    string = ""
-    for i in range(magic_string.counter, 1, -1):
-        string += "BestSchool, "
-    string += "BestSchool"
-    return string
+def magic_string(JoiningList = []):
+    JoiningList += ["BestSchool"]
+    return ", ".join(JoiningList)

@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# 10-student.py
+# 11-student.py
 # Ethan Zalta
 """This is a file creating a class Student"""
 

@@ -6,7 +6,6 @@ object."""
 
 
 def add_attribute(obj, name, value):
-    listOfObjs = (int, float, str, list, tuple, dict, set, bool, complex)
-    if isinstance(obj, listOfObjs):
+    if not hasattr(obj, "__dict__"):
         raise TypeError("can't add new attribute")
     setattr(obj, name, value)

@@ -3,6 +3,7 @@
 # Ethan Zalta
 """This is a file creating a class myInt"""
 
+
 class MyInt(int):
     """Class MyInt inherits from int"""
 

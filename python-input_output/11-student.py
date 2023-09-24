@@ -23,3 +23,9 @@ class Student:
                     specific_attributes[item] = self.__dict__[item]
             return specific_attributes
         return self.__dict__
+
+    def reload_from_json(self, json):
+        """Loads attributes from a json formatted dictionary and changes
+        attribute of self to the values stored in dictionary"""
+        for key in json:
+            setattr(self, key, json[key])

@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# 0-rectangle.py
+# 6-rectangle.py
 # Ethan Zalta
 """This is a file creating a class for Rectangle."""
 

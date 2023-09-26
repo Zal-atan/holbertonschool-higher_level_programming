@@ -3,7 +3,7 @@
 
 # Author - Ethan Zalta
 
-## There are 7 tasks in this project
+## There are 7 tasks in this project with 2 bonus tasks
 
 
 ## **Task 0**
@@ -50,3 +50,15 @@
         * Public instance method: def my_print(self): that prints in stdout the square with the character #:
             * if size is equal to 0, print an empty line
             * position should be use by using space - Don’t fill lines by spaces when position[1] > 0
+
+
+## **Task 101**
+* Write a class Square that defines a square by: (based on 6-square.py)
+    * Public instance method: def my_print(self): that  prints in stdout the square with the character #:
+        * if size is equal to 0, print an empty line
+        * position should be use by using space
+
+## **Task 102**
+* Write a class Square that defines a square by: (based on 4-square.py)
+
+    * Square instance can answer to comparators: ==, !=, >, >=, < and <= based on the square area

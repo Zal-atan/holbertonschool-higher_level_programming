@@ -17,7 +17,8 @@ class TestBase(unittest.TestCase):
 
     def test_class_docstring(self):
         """Tests the class DocString"""
-        self.assertTrue(len(__import__('models').rectangle.Rectangle.__doc__) > 0)
+        self.assertTrue(len(__import__('models')
+                        .rectangle.Rectangle.__doc__) > 0)
 
     def test_pycodestyle(self):
         """Tests if model/base is pycodestyle compliant"""
@@ -31,20 +32,124 @@ class TestBase(unittest.TestCase):
         self.assertEqual(checkPyC.total_errors, 0,
                          "Found code style errors (and warnings).")
 
-    def test_no_input(self):
-        """Check for no input correct output"""
-        r1 = Rectangle()
-        r2 = Rectangle()
-        self.assertEqual(r2.id - r1.id, 1)
-
     def test_is_instance(self):
         """Testing to make sure Instantiated correctly"""
-        r2 = Rectangle()
+        r2 = Rectangle(5, 4)
         self.assertIsInstance(r2, Rectangle)
+
+    def test_no_input_id(self):
+        """Check for no input correct output"""
+        r1 = Rectangle(5, 4)
+        r2 = Rectangle(3, 2)
+        self.assertEqual(r2.id - r1.id, 1)
 
     def test_input_with_id(self):
         """Testing with input for ID"""
-        r3 = Rectangle(12)
+        r3 = Rectangle(5, 4, 0, 0, 12)
         self.assertEqual(r3.id, 12)
+
+    def test_correct_width_change(self):
+        """Set width, check it, and change it and check"""
+        r1 = Rectangle(5, 4)
+        self.assertEqual(r1.width, 5)
+        r1.width = 10
+        self.assertEqual(r1.width, 10)
+
+    def test_incorrect_width(self):
+        """Testing string input type into width"""
+        r1 = Rectangle(5, 4)
+        with self.assertRaisesRegex(TypeError, "width must be an integer"):
+            r1.width = "5"
+        """Testing None input into width"""
+        with self.assertRaisesRegex(TypeError, "width must be an integer"):
+            r1.width = None
+        """Testing List input into width"""
+        with self.assertRaisesRegex(TypeError, "width must be an integer"):
+            r1.width = [5, 7, 8]
+
+        """Testing 0 input into width"""
+        with self.assertRaisesRegex(ValueError, "width must be > 0"):
+            r1.width = 0
+        """Testing -5 input into width"""
+        with self.assertRaisesRegex(ValueError, "width must be > 0"):
+            r1.width = -5
+
+    def test_correct_height_change(self):
+        """Set height, check it, and change it and check"""
+        r1 = Rectangle(4, 5)
+        self.assertEqual(r1.height, 5)
+        r1.height = 10
+        self.assertEqual(r1.height, 10)
+
+    def test_incorrect_height(self):
+        """Testing string input type into height"""
+        r1 = Rectangle(5, 4)
+        with self.assertRaisesRegex(TypeError, "height must be an integer"):
+            r1.height = "5"
+        """Testing None input into height"""
+        with self.assertRaisesRegex(TypeError, "height must be an integer"):
+            r1.height = None
+        """Testing List input into height"""
+        with self.assertRaisesRegex(TypeError, "height must be an integer"):
+            r1.height = [5, 7, 8]
+
+        """Testing 0 input into height"""
+        with self.assertRaisesRegex(ValueError, "height must be > 0"):
+            r1.height = 0
+        """Testing -5 input into height"""
+        with self.assertRaisesRegex(ValueError, "height must be > 0"):
+            r1.height = -5
+
+    def test_correct_x_change(self):
+        """Set x, check it, and change it and check"""
+        r1 = Rectangle(4, 5)
+        self.assertEqual(r1.x, 0)
+        r1.x = 10
+        self.assertEqual(r1.x, 10)
+
+    def test_incorrect_x_pos(self):
+        """Testing string input type into x"""
+        r1 = Rectangle(5, 4)
+        with self.assertRaisesRegex(TypeError, "x must be an integer"):
+            r1.x = "5"
+        """Testing None input into x"""
+        with self.assertRaisesRegex(TypeError, "x must be an integer"):
+            r1.x = None
+        """Testing List input into x"""
+        with self.assertRaisesRegex(TypeError, "x must be an integer"):
+            r1.x = [5, 7, 8]
+
+        """Testing -1 input into x"""
+        with self.assertRaisesRegex(ValueError, "x must be >= 0"):
+            r1.x = -1
+        """Testing -5 input into x"""
+        with self.assertRaisesRegex(ValueError, "x must be >= 0"):
+            r1.x = -5
+
+    def test_correct_y_change(self):
+        """Set y, check it, and change it and check"""
+        r1 = Rectangle(4, 5)
+        self.assertEqual(r1.y, 0)
+        r1.y = 10
+        self.assertEqual(r1.y, 10)
+
+    def test_incorrect_y_pos(self):
+        """Testing string input type into y"""
+        r1 = Rectangle(5, 4)
+        with self.assertRaisesRegex(TypeError, "y must be an integer"):
+            r1.y = "5"
+        """Testing None input into y"""
+        with self.assertRaisesRegex(TypeError, "y must be an integer"):
+            r1.y = None
+        """Testing List input into y"""
+        with self.assertRaisesRegex(TypeError, "y must be an integer"):
+            r1.y = [5, 7, 8]
+
+        """Testing -1 input into y"""
+        with self.assertRaisesRegex(ValueError, "y must be >= 0"):
+            r1.y = -1
+        """Testing -5 input into y"""
+        with self.assertRaisesRegex(ValueError, "y must be >= 0"):
+            r1.y = -5
 
     # def test_incorrect_use(self):

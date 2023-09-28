@@ -35,7 +35,7 @@ class Rectangle(Base):
         """Returns private value of height"""
         return self.__height
 
-    @width.setter
+    @height.setter
     def height(self, value):
         """Allows height to be set as a new integer"""
         if type(value) is not int:

@@ -24,3 +24,15 @@ class Square(Rectangle):
         "Changes the width and height to be equal to size"
         self.width = value
         self.height = value
+
+    def update(self, *args, **kwargs):
+        """Updates the function in the specific order of vargs:
+        {0: "id", 1: "size", 2: "x", 3: "y"}"""
+        arg_dic = {0: "id", 1: "size", 2: "x", 3: "y"}
+        if len(args) > 0:
+            for i in range(len(args)):
+                setattr(self, arg_dic[i], args[i])
+        else:
+            for key, value in kwargs.items():
+                if key in arg_dic.values():
+                    setattr(self, key, value)

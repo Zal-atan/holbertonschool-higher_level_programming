@@ -93,6 +93,8 @@ class Rectangle(Base):
                f" {self.width}/{self.height}")
 
     def update(self, *args):
+        """Updates the function in the specific order of vargs:
+        {0: "id", 1: "width", 2: "height", 3: "x", 4: "y"}"""
         arg_dic = {0: "id", 1: "width", 2: "height", 3: "x", 4: "y"}
         for i in range(len(args)):
             setattr(self, arg_dic[i], args[i])

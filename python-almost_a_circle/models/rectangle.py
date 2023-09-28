@@ -2,7 +2,7 @@
 # rectangle.py
 # Ethan Zalta
 """This is a file creating a Rectangle Class"""
-from models.base import Base 
+from models.base import Base
 
 
 class Rectangle(Base):

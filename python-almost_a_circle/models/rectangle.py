@@ -101,3 +101,9 @@ class Rectangle(Base):
         for key, value in kwargs.items():
             if key in arg_dic.values():
                 setattr(self, key, value)
+
+    def to_dictionary(self):
+        """Returns a dictionary of the actived attributes of instance of
+        rectangle"""
+        return {'x': self.x, 'y': self.y, 'id': self.id,
+                'height': self.height, 'width': self.width}

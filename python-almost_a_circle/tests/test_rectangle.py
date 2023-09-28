@@ -192,16 +192,19 @@ class TestBase(unittest.TestCase):
         self.assertEqual(r5.y, 6)
 
     def test_area_correct_inputs(self):
+        """Testing area function"""
         r1 = Rectangle(3, 4)
         self.assertEqual(r1.area(), 12)
         r1 = Rectangle(10, 20)
         self.assertEqual(r1.area(), 200)
 
     def test_print_str(self):
+        """Testing print str"""
         r1 = Rectangle(3, 4, 2, 3, 10)
         self.assertEqual(str(r1), "[Rectangle] (10) 2/3 - 3/4")
 
     def test_update_function_args(self):
+        """Testing correct uses of update function with args"""
         r1 = Rectangle(10, 10, 10, 10, 10)
         self.assertEqual(str(r1), "[Rectangle] (10) 10/10 - 10/10")
         r1.update(89)
@@ -216,6 +219,7 @@ class TestBase(unittest.TestCase):
         self.assertEqual(str(r1), "[Rectangle] (89) 4/5 - 2/3")
 
     def test_update_function_kwargs(self):
+        """Testing kwargs on update func"""
         r1 = Rectangle(10, 10, 10, 10, 10)
         self.assertEqual(str(r1), "[Rectangle] (10) 10/10 - 10/10")
         r1.update(height=1)
@@ -228,6 +232,19 @@ class TestBase(unittest.TestCase):
         self.assertEqual(str(r1), "[Rectangle] (89) 1/3 - 4/2")
 
     def test_update_function_incorrect(self):
+        """Testing incorrect uses of update function"""
         r1 = Rectangle(10, 10, 10, 10, 10)
         with self.assertRaises(KeyError):
             r1.update(1, 2, 3, 4, 5, 6)
+
+    def test_to_dictionary(self):
+        """Testing to_dict method and output and input into update func"""
+        r1 = Rectangle(10, 2, 1, 9, 25)
+        r1_dict = r1.to_dictionary()
+        self.assertIsInstance(r1_dict, dict)
+        self.assertEqual(r1_dict, {'x': 1, 'y': 9, 'id': 25, 'height': 2,
+                         'width': 10})
+        r2 = Rectangle(1, 1, 0, 0, 2)
+        self.assertEqual(str(r2), "[Rectangle] (2) 0/0 - 1/1")
+        r2.update(**r1_dict)
+        self.assertEqual(str(r2), "[Rectangle] (25) 1/9 - 10/2")

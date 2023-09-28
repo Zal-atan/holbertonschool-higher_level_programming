@@ -5,6 +5,7 @@
 
 import unittest
 from models.rectangle import Rectangle
+from models.base import Base
 import pycodestyle
 
 
@@ -36,6 +37,10 @@ class TestBase(unittest.TestCase):
         """Testing to make sure Instantiated correctly"""
         r2 = Rectangle(5, 4)
         self.assertIsInstance(r2, Rectangle)
+
+    def test_rectangle_is_base(self):
+        r2 = Rectangle(3, 4)
+        self.assertIsInstance(r2, Base)
 
     def test_no_input_id(self):
         """Check for no input correct output"""
@@ -152,4 +157,36 @@ class TestBase(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "y must be >= 0"):
             r1.y = -5
 
-    # def test_incorrect_use(self):
+    def test_private_attributes(self):
+        """Testing if each attribute is private"""
+        r4 = Rectangle(5, 4, 6, 3, 8)
+        with self.assertRaises(AttributeError):
+            r4.__width
+        with self.assertRaises(AttributeError):
+            r4.__height
+        with self.assertRaises(AttributeError):
+            r4.__x
+        with self.assertRaises(AttributeError):
+            r4.__y
+
+    def test_no_inputs(self):
+        """Testing no inputs"""
+        with self.assertRaises(TypeError):
+            r5 = Rectangle()
+
+    def test_1_inputs(self):
+        """Testing 1 inputs"""
+        with self.assertRaises(TypeError):
+            r5 = Rectangle(5)
+
+    def test_3_inputs(self):
+        """Testing 3 inputs"""
+        r5 = Rectangle(3, 4, 5)
+        self.assertEqual(r5.x, 5)
+        self.assertEqual(r5.y, 0)
+
+    def test_4_inputs(self):
+        """Testing 4 inputs"""
+        r5 = Rectangle(3, 4, 5, 6)
+        self.assertEqual(r5.x, 5)
+        self.assertEqual(r5.y, 6)

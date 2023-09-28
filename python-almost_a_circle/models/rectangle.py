@@ -78,7 +78,7 @@ class Rectangle(Base):
 
     def display(self):
         """Prints the Rectangle in StdOut"""
-        for l in range(0, self.y):
+        for lm in range(0, self.y):
             print()
         for i in range(0, self.height):
             for k in range(0, self.x):
@@ -92,9 +92,12 @@ class Rectangle(Base):
         return(f"[Rectangle] ({self.id}) {self.x}/{self.y} -"
                f" {self.width}/{self.height}")
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """Updates the function in the specific order of vargs:
         {0: "id", 1: "width", 2: "height", 3: "x", 4: "y"}"""
         arg_dic = {0: "id", 1: "width", 2: "height", 3: "x", 4: "y"}
         for i in range(len(args)):
             setattr(self, arg_dic[i], args[i])
+        for key, value in kwargs.items():
+            if key in arg_dic.values():
+                setattr(self, key, value)

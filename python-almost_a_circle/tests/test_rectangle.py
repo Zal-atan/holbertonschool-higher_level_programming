@@ -190,3 +190,9 @@ class TestBase(unittest.TestCase):
         r5 = Rectangle(3, 4, 5, 6)
         self.assertEqual(r5.x, 5)
         self.assertEqual(r5.y, 6)
+
+    def test_area_correct_inputs(self):
+        r1 = Rectangle(3, 4)
+        self.assertEqual(r1.area(), 12)
+        r1 = Rectangle(10, 20)
+        self.assertEqual(r1.area(), 200)

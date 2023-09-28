@@ -240,3 +240,14 @@ class TestBase(unittest.TestCase):
         s1.size = 7
         self.assertEqual(s1.width, 7)
         self.assertEqual(s1.height, 7)
+
+    def test_to_dictionary(self):
+        """Testing to_dict method and output and input into update func"""
+        s1 = Square(10, 2, 1, 9)
+        s1_dict = s1.to_dictionary()
+        self.assertIsInstance(s1_dict, dict)
+        self.assertEqual(s1_dict, {'id': 9, 'x': 2, 'size': 10, 'y': 1})
+        s2 = Square(1, 0, 0, 2)
+        self.assertEqual(str(s2), "[Square] (2) 0/0 - 1")
+        s2.update(**s1_dict)
+        self.assertEqual(str(s2), "[Square] (9) 2/1 - 10")

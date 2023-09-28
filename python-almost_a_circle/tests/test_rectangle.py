@@ -196,3 +196,7 @@ class TestBase(unittest.TestCase):
         self.assertEqual(r1.area(), 12)
         r1 = Rectangle(10, 20)
         self.assertEqual(r1.area(), 200)
+
+    def print_str(self):
+        r1 = Rectangle(3, 4, 2, 3, 10)
+        self.assertEqual(print(r1), "[Rectangle] (10) 2/3 - 3/4")

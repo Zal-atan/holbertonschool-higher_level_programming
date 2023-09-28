@@ -197,6 +197,20 @@ class TestBase(unittest.TestCase):
         r1 = Rectangle(10, 20)
         self.assertEqual(r1.area(), 200)
 
-    def print_str(self):
+    def test_print_str(self):
         r1 = Rectangle(3, 4, 2, 3, 10)
         self.assertEqual(print(r1), "[Rectangle] (10) 2/3 - 3/4")
+
+    def test_update_function(self):
+        r1 = Rectangle(10, 10, 10, 10, 10)
+        self.assertEqual(print(r1), "[Rectangle] (10) 10/10 - 10/10")
+        r1.update(89)
+        self.assertEqual(print(r1), "[Rectangle] (89) 10/10 - 10/10")
+        r1.update(89, 2)
+        self.assertEqual(print(r1), "[Rectangle] (89) 10/10 - 2/10")
+        r1.update(89, 2, 3)
+        self.assertEqual(print(r1), "[Rectangle] (89) 10/10 - 2/3")
+        r1.update(89, 2, 3, 4)
+        self.assertEqual(print(r1), "[Rectangle] (89) 4/10 - 2/3")
+        r1.update(89, 2, 3, 4, 5)
+        self.assertEqual(print(r1), "[Rectangle] (89) 4/5 - 2/3")

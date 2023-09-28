@@ -91,3 +91,8 @@ class Rectangle(Base):
         """Returns a formatted string to print"""
         return(f"[Rectangle] ({self.id}) {self.x}/{self.y} -"
                f" {self.width}/{self.height}")
+
+    def update(self, *args):
+        arg_dic = {0: "id", 1: "width", 2: "height", 3: "x", 4: "y"}
+        for i in range(len(args)):
+            setattr(self, arg_dic[i], args[i])

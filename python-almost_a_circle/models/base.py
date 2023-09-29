@@ -48,6 +48,20 @@ class Base:
                 file.write(json_str)
 
     @classmethod
+    def load_from_file(cls):
+        name = cls.__name__ + ".json"
+        try:
+            with open(name, "r") as file:
+                file_contents = file.read()
+            list_contents = cls.from_json_string(file_contents)
+            list_instances = [cls.create(**d) for d in list_contents]
+            return list_instances
+
+        except Exception as e:
+            return []
+
+
+    @classmethod
     def create(cls, **dictionary):
         """This class method takes a dictionary input and creates a new
         instance of a class with the attributes given in the dictionary"""

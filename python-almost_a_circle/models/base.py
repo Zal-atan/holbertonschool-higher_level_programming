@@ -20,10 +20,18 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
-        """Turns a list of dictionaries into a jsons tring"""
+        """Turns a list of dictionaries into a json string"""
         if list_dictionaries is None or list_dictionaries == []:
             return "[]"
         return json.dumps(list_dictionaries)
+
+    @staticmethod
+    def from_json_string(json_string):
+        """Turns a json string into a list of dictionaries"""
+        if json_string is None or json_string == "":
+            return []
+        else:
+            return json.loads(json_string)
 
     @classmethod
     def save_to_file(cls, list_objs):

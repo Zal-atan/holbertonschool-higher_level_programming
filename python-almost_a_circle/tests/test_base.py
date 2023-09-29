@@ -51,11 +51,16 @@ class TestBase(unittest.TestCase):
 
     def test_non_integer_id_inputs(self):
         """Testing non-integer-inputs for ID"""
+        #No Extra Checks
         self.assertEqual(2.5, Base(2.5).id)
         self.assertEqual("Word", Base("Word").id)
         self.assertEqual(True, Base(True).id)
         self.assertEqual(complex(10), Base(complex(10)).id)
         self.assertEqual([1, 2, 4], Base([1, 2, 4]).id)
+
+    def test_two_inputs_base(self):
+        with self.assertRaises(TypeError):
+            Base(30, 10)
 
     def test_to_json_string(self):
         """Testing json string converter"""

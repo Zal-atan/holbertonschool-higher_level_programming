@@ -49,6 +49,14 @@ class TestBase(unittest.TestCase):
         b3 = Base(12)
         self.assertEqual(b3.id, 12)
 
+    def test_non_integer_id_inputs(self):
+        """Testing non-integer-inputs for ID"""
+        self.assertEqual(2.5, Base(2.5).id)
+        self.assertEqual("Word", Base("Word").id)
+        self.assertEqual(True, Base(True).id)
+        self.assertEqual(complex(10), Base(complex(10)).id)
+        self.assertEqual([1, 2, 4], Base([1, 2, 4]).id)
+
     def test_to_json_string(self):
         """Testing json string converter"""
         dic_test = {'x': 2, 'y': 8, 'id': 1, 'height': 7, 'width': 10}

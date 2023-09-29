@@ -49,6 +49,9 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
+        """Loads json format string of attributes of different instances of
+        class, then creates instances of that class and returns list of
+        instances"""
         name = cls.__name__ + ".json"
         try:
             with open(name, "r") as file:

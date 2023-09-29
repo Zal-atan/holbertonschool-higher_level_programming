@@ -35,6 +35,6 @@ class Base:
             if list_objs is None:
                 file.write("[]")
             else:
-                list_of_objs = [obect.to_dictionary() for object in list_objs]
+                list_of_objs = [object.to_dictionary() for object in list_objs]
                 json_str = Base.to_json_string(list_of_objs)
                 file.write(json_str)

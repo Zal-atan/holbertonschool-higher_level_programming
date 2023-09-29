@@ -56,10 +56,8 @@ class Base:
             list_contents = cls.from_json_string(file_contents)
             list_instances = [cls.create(**d) for d in list_contents]
             return list_instances
-
-        except Exception as e:
+        except IOError:
             return []
-
 
     @classmethod
     def create(cls, **dictionary):

@@ -194,16 +194,19 @@ class TestBase(unittest.TestCase):
         self.assertEqual(s5.y, 5)
 
     def test_area_correct_inputs(self):
+        """Testing Correct Area"""
         s1 = Square(3, 4)
         self.assertEqual(s1.area(), 9)
         s1 = Square(10, 20)
         self.assertEqual(s1.area(), 100)
 
     def test_print_str(self):
+        """Testing Print Str"""
         s1 = Square(3, 2, 3, 10)
         self.assertEqual(str(s1), "[Square] (10) 2/3 - 3")
 
     def test_update_function_args(self):
+        "Testing Update Function with normal args"
         s1 = Square(10, 10, 10, 10)
         self.assertEqual(str(s1), "[Square] (10) 10/10 - 10")
         s1.update(89)
@@ -218,6 +221,7 @@ class TestBase(unittest.TestCase):
             s1.update(89, 2, 3, 4, 5)
 
     def test_update_function_kwargs(self):
+        """Testing Update function with kwargs"""
         s1 = Square(10, 10, 10, 10)
         self.assertEqual(str(s1), "[Square] (10) 10/10 - 10")
         s1.update(size=1)
@@ -230,11 +234,13 @@ class TestBase(unittest.TestCase):
         self.assertEqual(str(s1), "[Square] (89) 1/3 - 4")
 
     def test_update_function_incorrect(self):
+        """Testing incorrect uses of update function"""
         s1 = Square(10, 10, 10, 10)
         with self.assertRaises(KeyError):
             s1.update(1, 2, 3, 4, 5, 6)
 
     def test_size_setter(self):
+        """Testing Size Setter"""
         s1 = Square(10, 10, 10, 10)
         self.assertEqual(s1.width, 10)
         s1.size = 7
@@ -251,3 +257,10 @@ class TestBase(unittest.TestCase):
         self.assertEqual(str(s2), "[Square] (2) 0/0 - 1")
         s2.update(**s1_dict)
         self.assertEqual(str(s2), "[Square] (9) 2/1 - 10")
+
+    def test_to_json_string(self):
+        """Testing json string converter"""
+        s1 = Square(10, 2, 1, 9)
+        s1_dict = s1.to_dictionary()
+        json_dic = Base.to_json_string(s1_dict)
+        self.assertEqual(json_dic, '{"id": 9, "x": 2, "size": 10, "y": 1}')

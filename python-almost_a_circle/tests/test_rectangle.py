@@ -248,3 +248,11 @@ class TestBase(unittest.TestCase):
         self.assertEqual(str(r2), "[Rectangle] (2) 0/0 - 1/1")
         r2.update(**r1_dict)
         self.assertEqual(str(r2), "[Rectangle] (25) 1/9 - 10/2")
+
+    def test_to_json_string(self):
+        """Testing json string converter"""
+        r1 = Rectangle(10, 2, 1, 9, 25)
+        r1_dict = r1.to_dictionary()
+        json_dic = Base.to_json_string(r1_dict)
+        self.assertEqual(json_dic, '{"x": 1, "y": 9, "id": 25, "height": 2,'
+                         ' "width": 10}')

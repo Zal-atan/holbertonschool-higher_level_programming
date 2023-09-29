@@ -24,3 +24,17 @@ class Base:
         if list_dictionaries is None or list_dictionaries == []:
             return "[]"
         return json.dumps(list_dictionaries)
+
+    @classmethod
+    def save_to_file(cls, list_objs):
+        """This class method opens or creates a file of <class>.json and
+        writes a json string of each instance of the class that is
+        inputted."""
+        name = cls.__name__ + ".json"
+        with open(name, "w") as file:
+            if list_objs is None:
+                file.write("[]")
+            else:
+                list_of_objs = [obect.to_dictionary() for object in list_objs]
+                json_str = Base.to_json_string(list_of_objs)
+                file.write(json_str)

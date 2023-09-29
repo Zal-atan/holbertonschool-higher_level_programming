@@ -59,6 +59,7 @@ class TestBase(unittest.TestCase):
         self.assertEqual([1, 2, 4], Base([1, 2, 4]).id)
 
     def test_two_inputs_base(self):
+        # No Extra Checks
         with self.assertRaises(TypeError):
             Base(30, 10)
 
@@ -76,6 +77,31 @@ class TestBase(unittest.TestCase):
         with open("Rectangle.json", "r") as file:
             read = file.read()
         correct = '[{"x": 3, "y": 4, "id": 5, "height": 2, "width": 1}]'
+        self.assertEqual(read, correct)
+
+        r1 = Rectangle(1, 2, 3, 4, 5)
+        r2 = Rectangle(6, 7, 8, 9, 10)
+        Rectangle.save_to_file([r1, r2])
+        with open("Rectangle.json", "r") as file:
+            read = file.read()
+        correct = '[{"x": 3, "y": 4, "id": 5, "height": 2, "width": 1},'\
+                  ' {"x": 8, "y": 9, "id": 10, "height": 7, "width": 6}]'
+        self.assertEqual(read, correct)
+
+        s1 = Square(1, 2, 3, 4)
+        Square.save_to_file([s1])
+        with open("Square.json", "r") as file:
+            read = file.read()
+        correct = '[{"id": 4, "x": 2, "size": 1, "y": 3}]'
+        self.assertEqual(read, correct)
+
+        s1 = Square(1, 2, 3, 4)
+        s2 = Square(6, 7, 8, 9)
+        Square.save_to_file([s1, s2])
+        with open("Square.json", "r") as file:
+            read = file.read()
+        correct = '[{"id": 4, "x": 2, "size": 1, "y": 3},'\
+                  ' {"id": 9, "x": 7, "size": 6, "y": 8}]'
         self.assertEqual(read, correct)
 
     def test_from_json_string(self):

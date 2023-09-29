@@ -51,7 +51,7 @@ class TestBase(unittest.TestCase):
 
     def test_non_integer_id_inputs(self):
         """Testing non-integer-inputs for ID"""
-        #No Extra Checks
+        # No Extra Checks
         self.assertEqual(2.5, Base(2.5).id)
         self.assertEqual("Word", Base("Word").id)
         self.assertEqual(True, Base(True).id)

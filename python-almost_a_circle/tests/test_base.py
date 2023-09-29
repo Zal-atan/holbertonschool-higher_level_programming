@@ -47,4 +47,9 @@ class TestBase(unittest.TestCase):
         b3 = Base(12)
         self.assertEqual(b3.id, 12)
 
-    # def test_incorrect_use(self):
+    def test_to_json_string(self):
+        """Testing json string converter"""
+        dic_test = {'x': 2, 'y': 8, 'id': 1, 'height': 7, 'width': 10}
+        json_dic = Base.to_json_string([dic_test])
+        self.assertEqual(json_dic, '[{"x": 2, "y": 8, "id": 1,'
+                         ' "height": 7, "width": 10}]')

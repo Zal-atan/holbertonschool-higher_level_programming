@@ -4,7 +4,9 @@
 """This is a Unittest class for testing the Base Class"""
 
 import unittest
+from models.rectangle import Rectangle
 from models.base import Base
+from models.square import Square
 import pycodestyle
 
 
@@ -53,3 +55,11 @@ class TestBase(unittest.TestCase):
         json_dic = Base.to_json_string([dic_test])
         self.assertEqual(json_dic, '[{"x": 2, "y": 8, "id": 1,'
                          ' "height": 7, "width": 10}]')
+
+    def test_save_to_file(self):
+        r1 = Rectangle(1, 2, 3, 4, 5)
+        Rectangle.save_to_file([r1])
+        with open("Rectangle.json", "r") as file:
+            read = file.read()
+        correct = '[{"x": 3, "y": 4, "id": 5, "height": 2, "width": 1}]'
+        self.assertEqual(read, correct)

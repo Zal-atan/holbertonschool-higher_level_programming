@@ -46,3 +46,16 @@ class Base:
                 list_of_objs = [object.to_dictionary() for object in list_objs]
                 json_str = Base.to_json_string(list_of_objs)
                 file.write(json_str)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """This class method takes a dictionary input and creates a new
+        instance of a class with the attributes given in the dictionary"""
+        if dictionary and dictionary != {}:
+            if cls.__name__ == "Square":
+                new_inst = cls(1)
+            else:
+                new_inst = cls(1, 1)
+
+            new_inst.update(**dictionary)
+            return new_inst

@@ -8,6 +8,7 @@ from models.rectangle import Rectangle
 from models.base import Base
 from models.square import Square
 import pycodestyle
+import os
 
 
 class TestBase(unittest.TestCase):
@@ -115,3 +116,32 @@ class TestBase(unittest.TestCase):
         correct = [{'height': 4, 'width': 10, 'id': 89},
                    {'height': 7, 'width': 1, 'id': 7}]
         self.assertEqual(correct, list_output)
+
+    def test_load_from_file(self):
+        """Testing from json in file to creating instances"""
+        r1 = Rectangle(1, 2, 3, 4, 5)
+        r2 = Rectangle(6, 7, 8, 9, 10)
+        rec_list = [r1, r2]
+        Rectangle.save_to_file(rec_list)
+        list_rect_return = Rectangle.load_from_file()
+        # self.assertEqual(str(list_rect_return), str(rec_list))
+        self.assertEqual(str(list_rect_return[0]), str(r1))
+        self.assertEqual(str(list_rect_return[1]), str(r2))
+
+        s1 = Square(1, 2, 3, 4)
+        s2 = Square(6, 7, 8, 9)
+        sqr_list = [s1, s2]
+        Square.save_to_file(sqr_list)
+        list_sqr_return = Square.load_from_file()
+        # self.assertEqual(str(list_sqr_return), str(sqr_list))
+        self.assertEqual(str(list_sqr_return[0]), str(s1))
+        self.assertEqual(str(list_sqr_return[1]), str(s2))
+
+        """No File"""
+        os.remove("Square.json")
+        no_file = Square.load_from_file()
+        self.assertEqual([], no_file)
+
+        """Too many arguments"""
+        with self.assertRaises(TypeError):
+            Base.load_from_file("string")

@@ -3,7 +3,7 @@
 
 # Author - Ethan Zalta
 
-## There are 17 tasks in this project
+## There are 17 tasks in this project with 4 Bonus Tasks
 
 
 ## **Task 0**
@@ -127,3 +127,26 @@
     * Results should display the score and the name (in this order)
     * Records should be listed by descending score
     * The database name will be passed as an argument to the mysql command
+
+## **Bonus Task 100**
+* Write a script that converts hbtn_0c_0 database to UTF8 (utf8mb4, collate utf8mb4_unicode_ci) in your MySQL server.
+
+* You need to convert all of the following to UTF8:
+    * Database hbtn_0c_0
+    * Table first_table
+    * Field name in first_table
+
+## **Bonus Task 101**
+* Import in hbtn_0c_0 database this table dump: download
+
+* Write a script that displays the average temperature (Fahrenheit) by city ordered by temperature (descending).
+
+## **Bonus Task 102**
+* Import in hbtn_0c_0 database this table dump: download (same as Temperatures #0)
+
+* Write a script that displays the top 3 of cities temperature during July and August ordered by temperature (descending).
+
+## **Bonus Task 103**
+* Import in hbtn_0c_0 database this table dump: download (same as Temperatures #0)
+
+* Write a script that displays the max temperature of each state (ordered by State name).

@@ -1,5 +1,5 @@
-# This is a Readme for the Python-More_Classes Project
-## In this project we will be going into more depth about classes, objects, and methods in Python
+# This is a Readme for the SQL_Introduction
+## In this project we will be learning about databases and how to manipulate them with MYSql
 
 # Author - Ethan Zalta
 

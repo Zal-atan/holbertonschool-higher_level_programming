@@ -19,6 +19,3 @@ if __name__ == "__main__":
 
     for row in all_data:
         print(row)
-
-    c.close()
-    db.close()

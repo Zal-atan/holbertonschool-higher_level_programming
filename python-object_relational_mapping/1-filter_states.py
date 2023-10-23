@@ -22,5 +22,6 @@ def show_state_n():
     c.close()
     db.close()
 
+
 if __name__ == "__main__":
     show_state_n()

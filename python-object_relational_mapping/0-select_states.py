@@ -8,7 +8,7 @@ from MySQLdb import connect
 from sys import argv
 
 
-def show_states():
+if __name__ == "__main__":
     """Shows all the states from the table in database"""
     # connect to database
     db = connect(host="localhost", port=3306, user=argv[1], passwd=argv[2],
@@ -25,7 +25,3 @@ def show_states():
 
     c.close()  # close cursor
     db.close()  # close database connection
-
-
-if __name__ == "__main__":
-    show_states()

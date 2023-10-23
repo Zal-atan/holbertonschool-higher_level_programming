@@ -12,14 +12,13 @@ def show_city_state():
                          passwd=argv[2], database=argv[3])
     c = db.cursor()
 
-    c.execute("SELECT cities.id, cities.name, states.name FROM cities"
-              "INNER JOIN states ON states.id = cities.state_id"
-              "ORDER BY id ASC")
+    c.execute("SELECT cities.id, cities.name, states.name FROM cities\
+              INNER JOIN states ON states.id = cities.state_id\
+              ORDER BY id ASC;")
     all_data = c.fetchall()
 
     for state in all_data:
-        if state[1][0] == 'N':
-            print(state)
+        print(state)
 
     c.close()
     db.close()

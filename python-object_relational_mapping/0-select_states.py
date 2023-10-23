@@ -8,7 +8,6 @@ from sys import argv
 
 
 if __name__ == "__main__":
-    """Shows all the states from the table in database"""
     db = MySQLdb.connect(host="localhost", port=3306, user=argv[1],
                          passwd=argv[2], database=argv[3])
 

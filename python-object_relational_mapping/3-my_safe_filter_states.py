@@ -13,8 +13,8 @@ def show_state_specific():
     c = db.cursor()
 
     state_name = argv[4]
-    c.execute("SELECT * FROM states WHERE BINARY name = %(inputName)s",
-              {'inputName': state_name})
+    c.execute("SELECT * FROM states WHERE BINARY name = %(inputName)s"
+              "ORDER BY id ASC"{'inputName': state_name})
     all_data = c.fetchall()
 
     for state in all_data:

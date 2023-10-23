@@ -12,14 +12,11 @@ def show_state_n():
                          passwd=argv[2], database=argv[3])
     c = db.cursor()
 
-    c.execute("SELECT * FROM states ORDER BY id;")
+    c.execute("SELECT * FROM states WHERE BINARY name = '{}'".format(argv[4]))
     all_data = c.fetchall()
 
-    search_name = argv[4]
-
     for state in all_data:
-        if state[1] == search_name:
-            print(state)
+        print(state)
 
     c.close()
     db.close()

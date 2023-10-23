@@ -20,9 +20,6 @@ def show_state_specific():
     for state in all_data:
         print(state)
 
-    c.close()
-    db.close()
-
 
 if __name__ == "__main__":
     show_state_specific()

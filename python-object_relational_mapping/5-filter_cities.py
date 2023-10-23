@@ -8,7 +8,7 @@ from sys import argv
 
 def show_city_state():
     """Search a state as argv4 to see all cities associated"""
-    db = MySQLdb.connect(host="localhost", port=3306, user=argv[1],
+    db = MySQLdb.Connection(host="localhost", port=3306, user=argv[1],
                          passwd=argv[2], database=argv[3])
     c = db.cursor()
 

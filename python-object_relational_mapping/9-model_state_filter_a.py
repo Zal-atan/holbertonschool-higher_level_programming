@@ -1,7 +1,7 @@
 #!/usr/bin/python3
-# 8-model_state_fetch_first.py
+# 9-model_state_filter_a.py
 # Ethan Zalta
-""" List first state from database in order of id, else Nothing"""
+""" List all states from database in order of id, only if they have an 'a'"""
 import sys
 from model_state import Base, State
 from sqlalchemy.orm import sessionmaker
@@ -17,10 +17,8 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    state = session.query(State).order_by(State.id).first()
+    all_states = session.query(State).order_by(State.id)
 
-    if state is None:
-        print("Nothing")
-
-    else:
-        print(f"{state.id}: {state.name}")
+    for state in all_states:
+        if "a" in state.name:
+            print(f"{state.id}: {state.name}")

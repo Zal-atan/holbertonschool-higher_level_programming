@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# model_city.py
+# relationship_city.py
 # Ethan Zalta
 """Class definition of a 'state', instantiates from Base = declarative_base"""
 from sqlalchemy import Column, Integer, String, ForeignKey

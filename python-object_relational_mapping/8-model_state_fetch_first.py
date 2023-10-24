@@ -17,7 +17,10 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    all_states = session.query(State).order_by(State.id)
+    state = session.query(State).order_by(State.id).first()
 
-    for state in all_states:
+    if state is None:
+        print("Nothing")
+
+    else:
         print(f"{state.id}: {state.name}")

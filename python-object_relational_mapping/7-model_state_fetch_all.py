@@ -17,10 +17,11 @@ def list_all_states():
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    all_states = session.query(State).order_by(State.id).all()
+    all_states = session.query(State).order_by(State.id)
 
     for state in all_states:
         print(f"{state.id}: {state.name}")
+
 
 if __name__ == "__main__":
     list_all_states()

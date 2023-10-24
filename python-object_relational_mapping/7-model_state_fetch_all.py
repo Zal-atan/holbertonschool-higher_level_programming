@@ -8,7 +8,7 @@ from sqlalchemy.orm import sessionmaker
 from sqlalchemy import (create_engine)
 
 
-def list_all_states():
+if __name__ == "__main__":
     engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format
                            (sys.argv[1], sys.argv[2], sys.argv[3]),
                            pool_pre_ping=True)
@@ -21,7 +21,3 @@ def list_all_states():
 
     for state in all_states:
         print(f"{state.id}: {state.name}")
-
-
-if __name__ == "__main__":
-    list_all_states()

@@ -1,7 +1,7 @@
 #!/usr/bin/python3
-# 100-relationship_states_cities.py
+# 101-relationship_states_cities_list.py
 # Ethan Zalta
-"""Add new state and city with relationship"""
+""" List all states objects with corresponding city objects within"""
 import sys
 from relationship_state import Base, State
 from relationship_city import City
@@ -18,6 +18,7 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    new_city_state = City(name="San Francisco", state=State(name="California"))
-    session.add(new_city_state)
-    session.commit()
+    for state in session.query(State).order_by(State.id):
+        print(f"{state.id}: {state.name}")
+        for city in state.cities:
+            print(f"    {city.id}: {city.name}")

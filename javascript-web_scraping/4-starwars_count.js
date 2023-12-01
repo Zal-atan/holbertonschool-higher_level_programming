@@ -13,7 +13,7 @@ request(process.argv[2], function (err, response, body) {
   for (const movie in fullJson) {
     const allChars = fullJson[movie].characters;
     for (const char in allChars) {
-      console.log(allChars[char]);
+      // console.log(allChars[char]);
       if (allChars[char].includes('/18/')) {
         counter++;
       }

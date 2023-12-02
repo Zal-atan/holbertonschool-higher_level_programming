@@ -3,7 +3,7 @@
 
 # Author - Ethan Zalta
 
-## There are 10 tasks in the project
+## There are 10 tasks in the project with 4 Bonus Taks
 
 
 ## **Task 0**
@@ -77,3 +77,44 @@
     * You can’t use document.querySelector to select the HTML tag
     * You must use the JQuery API
     * Your script must work when it is imported from the <head> tag
+
+## **Bonus Task 100**
+* Write a JavaScript script that updates the text color of the <header> element to red (#FF0000):
+
+    * You must use document.querySelector to select the HTML tag
+    * You can’t use the jQuery API
+    * Note: Your script must be imported from the <head> tag, not at the end of the HTML
+
+## **Bonus Task 101**
+* Write a JavaScript script that adds, removes and clears LI elements from a list when the user clicks:
+
+    * The new element must be: <li>Item</li>
+    * The new element must be added to UL.my_list
+    * When the user clicks on DIV#add_item: a new element is added to the list
+    * When the user clicks on DIV#remove_item: the last element is removed from the list
+    * When the user clicks on DIV#clear_list: all elements of the list are removed
+    * You can’t use document.querySelector to select the HTML tag
+    * You must use the JQuery API
+    * You script must work when it imported from the HEAD tag
+
+## **Bonus Task 102**
+* Write a JavaScript script that fetches and prints how to say “Hello” depending on the language
+
+    * You should use this API service: https://www.fourtonfish.com/hellosalut/hello/
+    * The language code will be the value entered in the tag INPUT#language_code (ex: es, fr, en etc.)
+    * The translation must be fetched when the user clicks on INPUT#btn_translate
+    * The translation of “Hello” must be displayed in the HTML tag DIV#hello
+    * You can’t use document.querySelector to select the HTML tag
+    * You must use the JQuery API
+    * You script must work when imported from the <head> tag
+
+## **Bonus Task 103**
+* Write a JavaScript script that fetches and prints how to say “Hello” depending on the language
+
+    * You should use this API service: https://www.fourtonfish.com/hellosalut/hello/
+    * The language code will be the value entered in the tag INPUT#language_code (ex: es, fr, en etc.)
+    * The translation must be fetched when the user clicks on INPUT#btn_translate OR presses ENTER when the focus is on INPUT#language_code
+    * The translation of “Hello” must be displayed in the HTML tag DIV#hello
+    * You can’t use document.querySelector to select the HTML tag
+    * You must use the JQuery API
+    * You script must work when imported from the <head> tag

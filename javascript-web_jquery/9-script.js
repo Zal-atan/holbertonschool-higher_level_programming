@@ -4,8 +4,10 @@
 
 const website = 'https://hellosalut.stefanbohacek.dev/?lang=fr';
 
-// Get the whole website JSON data
-$.get(website, function (data) {
-  // Change text inside #hello
-  $('#hello').text(data.hello);
+$('document').ready(function () {
+  // Get the whole website JSON data
+  $.get(website, function (data) {
+    // Change text inside #hello
+    $('#hello').text(data.hello);
+  });
 });

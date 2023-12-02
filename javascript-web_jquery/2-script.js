@@ -1,4 +1,4 @@
 #!/usr/bin/node
 $('#red_header').click(function () {
-    $('header').css('color', '#ff0000');
-})
+  $('header').css('color', '#ff0000');
+});

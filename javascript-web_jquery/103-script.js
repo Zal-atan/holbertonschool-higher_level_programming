@@ -10,8 +10,20 @@ $('document').ready(function () {
     console.log(website)
     // Get the whole website JSON data
     $.get(website + $("#language_code").val(), function (data) {
-      // Change text inside #hello in selected language
+      // Change text inside #hello
       $('#hello').text(data.hello);
     });
+  })
+  // When inside INPUT#language_code and press enter
+  $('#language_code').focus(function () {
+    // Checks for a key press
+    $(this).keydown(function (key) {
+      // If key press is enter key
+      if (key.keyCode === 13) {
+        $.get(website + $("#language_code").val(), function (data) {
+          $('#hello').text(data.hello);
+        })
+      }
+    })
   })
 });

@@ -11,14 +11,15 @@ request(website, function (err, response, body) {
     if (film.episode_id == process.argv[2]) {
       // Get each characters website
       const characters = film.characters;
+      // console.log(characters)
       // // For Each website
-      characters.forEach(function (char) {
-        request(char, function (err, response, body) {
+      for (char in characters) {
+        request(characters[char], function (err, response, body) {
           if (err) throw err;
           // Print character name
           console.log(JSON.parse(body).name);
         });
-      });
-    }
-  })
+      }
+    };
+  });
 });

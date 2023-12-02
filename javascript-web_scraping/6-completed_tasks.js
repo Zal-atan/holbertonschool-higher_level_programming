@@ -8,11 +8,11 @@ request(process.argv[2], function (err, response, body) {
   if (err) throw err;
   const allJobs = (JSON.parse(body));
   // console.log(allJobs)
-  let userObj = {}
-  for (task in allJobs) {
+  const userObj = {};
+  for (const task in allJobs) {
     // console.log(allJobs[task])
     if (allJobs[task].completed === true) {
-      userId = allJobs[task].userId
+      const userId = allJobs[task].userId;
       const hasKey = userId in userObj;
       if (hasKey) {
         userObj[userId] += 1;
@@ -21,5 +21,5 @@ request(process.argv[2], function (err, response, body) {
       }
     }
   }
-  console.log(userObj)
+  console.log(userObj);
 });

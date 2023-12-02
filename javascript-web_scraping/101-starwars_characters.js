@@ -13,13 +13,21 @@ request(website, function (err, response, body) {
       const characters = film.characters;
       // console.log(characters)
       // // For Each website
-      for (char in characters) {
+      let charArray= Array(characters.length)
+      for (let char in characters) {
         request(characters[char], function (err, response, body) {
           if (err) throw err;
           // Print character name
-          console.log(JSON.parse(body).name);
+          // console.log(JSON.parse(body).name)
+          charArray[char] = JSON.parse(body).name;
+          // console.log(JSON.parse(body).name);
         });
       }
+      setTimeout(() => {
+        charArray.forEach ( function (char) {
+          console.log(char)
+        })
+      }, 2000);
     };
   });
 });
